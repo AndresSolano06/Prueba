@@ -1,0 +1,29 @@
+<div style="padding: 15px; background-color: #808080;">
+    <mat-spinner *ngIf="products.length === 0"></mat-spinner>
+
+    <mat-card *ngFor="let product of products" style="margin-top:15px;">
+        <mat-card-header>
+            <mat-card-title>#{{product.id}} {{product.name}}</mat-card-title>
+            <mat-card-subtitle>El precio actual es de: {{product.price}} $
+            </mat-card-subtitle>
+            <mat-card-subtitle>La cantidad que se encuentra disponible es de: {{product.quantity}} 
+            </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <img style="height:50%; width: 50%; padding-left: 25%;" src="{{ product.imageUrl }}" />
+            <mat-card-subtitle style="color: black;">
+                DESCRIPCIÓN
+            </mat-card-subtitle>
+            <p style="color: #808080;">
+                {{product.description}}
+            </p>
+        </mat-card-content>
+        <mat-card-actions>
+      <button mat-raised-button>Detalles</button>
+      <button mat-raised-button> Agregar</button>
+    </mat-card-actions>
+    </mat-card>
+
+    <mat-card-subtitle style="color: black; padding-top: 10px;">Derechos reservados de BRUECKNER 2020. Proyecto de prueba tecnica.
+    </mat-card-subtitle>
+</div>
